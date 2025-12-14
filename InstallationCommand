@@ -1,0 +1,134 @@
+
+EARTHQUAKE PREDICTION SYSTEM
+===========================
+
+A full-stack earthquake prediction prototype using LSTM (Deep Learning)
+with a React frontend and Flask backend.
+
+--------------------------------------------------
+TECH STACK
+--------------------------------------------------
+
+Frontend:
+- React.js
+- Axios
+- SCSS
+
+Backend:
+- Flask
+- Flask-CORS
+- TensorFlow (LSTM)
+- NumPy
+- Pandas
+- Scikit-learn
+- Joblib
+
+--------------------------------------------------
+PROJECT STRUCTURE
+--------------------------------------------------
+
+earthquake-prediction/
+|
+|-- backend/
+|   |-- app.py
+|   |-- model.py
+|   |-- database.csv
+|   |-- requirements.txt
+|   |-- lstm_model.keras
+|   |-- scaler.pkl
+|
+|-- frontend/
+|   |-- src/
+|   |-- package.json
+|
+|-- README.txt
+
+--------------------------------------------------
+BACKEND SETUP
+--------------------------------------------------
+
+1. Move to backend directory
+   cd backend
+
+2. Create virtual environment
+   python -m venv venv
+
+3. Activate virtual environment
+
+   Windows:
+   venv\Scripts\activate
+
+   Mac/Linux:
+   source venv/bin/activate
+
+4. Install dependencies
+   pip install -r requirements.txt
+
+   If TensorFlow fails on Windows:
+   pip install tensorflow-cpu
+
+--------------------------------------------------
+TRAIN THE MODEL
+--------------------------------------------------
+
+Run:
+python model.py
+
+Enter:
+- Latitude
+- Longitude
+- Depth
+
+This generates:
+- lstm_model.keras
+- scaler.pkl
+
+--------------------------------------------------
+RUN FLASK SERVER
+--------------------------------------------------
+
+python app.py
+
+Server runs on:
+http://localhost:5000
+
+--------------------------------------------------
+FRONTEND SETUP
+--------------------------------------------------
+
+1. Move to frontend directory
+   cd frontend
+
+2. Install dependencies
+   npm install
+
+3. Create .env file in frontend folder
+
+   REACT_APP_BACKEND_URL=http://localhost:5000
+
+4. Start frontend
+   npm start
+
+Frontend runs on:
+http://localhost:3000
+
+--------------------------------------------------
+API DETAILS
+--------------------------------------------------
+
+POST /predict
+
+Request JSON:
+{
+  "latitude": 28.6,
+  "longitude": 77.2,
+  "depth": 10,
+  "date": "2025-01-01"
+}
+
+--------------------------------------------------
+DISCLAIMER
+--------------------------------------------------
+
+This project is for educational and research purposes only.
+It is NOT a real-world earthquake warning system.
